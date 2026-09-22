@@ -1,0 +1,19 @@
+{
+  "name": "payment-processor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 execute payment-processor-db --local --file=./schema.sql",
+    "db:migrate": "wrangler d1 execute payment-processor-db --remote --file=./schema.sql"
+  },
+  "dependencies": {
+    "hono": "^4.7.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workerd-windows-64": "^1.20260922.1",
+    "wrangler": "^4.136.3"
+  }
+}
